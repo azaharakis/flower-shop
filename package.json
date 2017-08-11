@@ -1,0 +1,18 @@
+{
+  "name": "flower-shop",
+  "description": "A simple flower shop",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/azaharakis/flower-shop.git"
+  },
+  "author": "Alexander Zaharakis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/azaharakis/flower-shop/issues"
+  },
+  "homepage": "https://github.com/azaharakis/flower-shop#readme"
+}
