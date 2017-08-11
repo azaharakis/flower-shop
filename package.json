@@ -18,6 +18,10 @@
   },
   "homepage": "https://github.com/azaharakis/flower-shop#readme",
   "dependencies": {
-    "eslint": "^4.4.1"
+    "babel-register": "^6.24.1",
+    "eslint": "^4.4.1",
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.6.0"
   }
 }
