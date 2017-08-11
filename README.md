@@ -13,5 +13,7 @@ To then install the correct version of node:
 
 Which will use the version specified in the .nvmrc file. 
 
-# Start the project
+# Running the project
+
 `npm run start` Will start the flower shop application
+`npm run test` Will lint and test the application

@@ -3,7 +3,9 @@
   "description": "A simple flower shop",
   "main": "src/index.js",
   "scripts": {
-    "start": "node src/index.js"
+    "start": "node src/index.js",
+    "test": "npm run lint",
+    "lint": "eslint ./src"
   },
   "repository": {
     "type": "git",
@@ -14,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/azaharakis/flower-shop/issues"
   },
-  "homepage": "https://github.com/azaharakis/flower-shop#readme"
+  "homepage": "https://github.com/azaharakis/flower-shop#readme",
+  "dependencies": {
+    "eslint": "^4.4.1"
+  }
 }
