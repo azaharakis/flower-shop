@@ -3,8 +3,9 @@
   "description": "A simple flower shop",
   "main": "src/index.js",
   "scripts": {
-    "start": "node src/index.js",
-    "test": "npm run lint && npm run unit",
+    "start": "node --require babel-register src/index.js",
+    "test": "npm run lint && npm run flow && npm run unit",
+    "flow": "flow ./src",
     "unit": "mocha --require babel-register ./src/**/*-spec.js",
     "lint": "eslint ./src"
   },
@@ -25,6 +26,9 @@
     "mocha": "^3.5.0"
   },
   "devDependencies": {
-    "babel-preset-env": "^1.6.0"
+    "babel-eslint": "^7.2.3",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-flow": "^6.23.0",
+    "flow-bin": "^0.52.0"
   }
 }

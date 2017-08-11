@@ -16,4 +16,4 @@ Which will use the version specified in the .nvmrc file.
 # Running the project
 
 `npm run start` Will start the flower shop application
-`npm run test` Will lint and test the application
+`npm run test` Will lint, type check and test the application
