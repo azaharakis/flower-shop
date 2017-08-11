@@ -4,7 +4,8 @@
   "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js",
-    "test": "npm run lint",
+    "test": "npm run lint && npm run unit",
+    "unit": "mocha --require babel-register ./src/**/*-spec.js",
     "lint": "eslint ./src"
   },
   "repository": {
@@ -19,7 +20,9 @@
   "homepage": "https://github.com/azaharakis/flower-shop#readme",
   "dependencies": {
     "babel-register": "^6.24.1",
+    "chai": "^4.1.1",
     "eslint": "^4.4.1",
+    "mocha": "^3.5.0"
   },
   "devDependencies": {
     "babel-preset-env": "^1.6.0"
