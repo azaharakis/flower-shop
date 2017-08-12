@@ -1,13 +1,15 @@
 /* @flow */
 
 import parse from './parse';
-import getInventory from './inventory';
+import getInventory, { type Item } from './inventory';
+import buildOrder from './order';
 
 export default (order: string) => {
     const requestedOrder = parse(order);
     const inventory  = getInventory();
-    return {
-        requestedOrder,
-        inventory
-    };
+
+    return buildOrder(requestedOrder)
+        .from(inventory)
+        .given((requestedOrderItemId) => (i: Item) => i.id === requestedOrderItemId)
+        .build();
 };
