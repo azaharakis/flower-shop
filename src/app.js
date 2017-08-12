@@ -1,10 +1,10 @@
 /* @flow */
 
-import orderParser from './orderParser';
+import parse from './parse';
 import getInventory from './inventory';
 
 export default (order: string) => {
-    const requestedOrder = orderParser(order);
+    const requestedOrder = parse(order);
     const inventory  = getInventory();
     return {
         requestedOrder,

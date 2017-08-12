@@ -1,10 +1,10 @@
 import { expect } from 'chai';
-import orderParser from './orderParser';
+import parse from './parse';
 
-describe('Order Parser', () =>{
+describe('parser', () =>{
     let parsedOrder;
     beforeEach(() => {
-        parsedOrder = orderParser(`
+        parsedOrder = parse(`
                         10 R12
                         5 L09
                       `);
@@ -19,7 +19,7 @@ describe('Order Parser', () =>{
 
     describe('with invalid orders', () =>{
         beforeEach(() => {
-            parsedOrder = orderParser(`
+            parsedOrder = parse(`
                         S R12
                         5
                       `);
