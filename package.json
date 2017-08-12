@@ -7,7 +7,7 @@
     "test": "npm run lint && npm run flow && npm run unit",
     "flow": "flow ./src",
     "unit": "mocha --require babel-register ./src/**/*-spec.js",
-    "lint": "eslint ./src"
+    "lint": "eslint ./src --fix"
   },
   "repository": {
     "type": "git",
