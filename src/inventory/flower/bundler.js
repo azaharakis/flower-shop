@@ -1,5 +1,7 @@
 /* @flow */
 
+import type {Bundle, Bundles} from './item';
+
 const evaluateBundles = (bundles, total, startAtIndex) => {
     let remaining = total; // the diff left over after the previous bundle has been applied
 
@@ -44,11 +46,6 @@ const evaluateBundles = (bundles, total, startAtIndex) => {
 };
 
 type Quantity = number;
-type Size = number;
-type Price = number;
-
-export type Bundle = [Size, Price]
-export type Bundles = Array<Bundle>
 
 export default (bundles: Bundles, total: Quantity): Array<[Quantity, Bundle]> => {
     const highToLow = (a:Bundle, b:Bundle) => b[0] - a[0];
