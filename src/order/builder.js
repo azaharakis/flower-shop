@@ -2,18 +2,18 @@
 
 type RequestedOrder = Array<[number, string]>
 
-export default <I>(requestedOrder: RequestedOrder) : Object => {
+export default <InventoryItem>(requestedOrder: RequestedOrder) : Object => {
     type Quantity = number;
     type OrderRequest = {
-        valid: Array<[Quantity, I]>,
+        valid: Array<[Quantity, InventoryItem]>,
         invalid: Array<[Quantity, string]>
     }
 
-    let items: Array<I> = [];
+    let items: Array<InventoryItem> = [];
     let predicate;
 
     return {
-        from(i: Array<I>) {
+        from(i: Array<InventoryItem>) {
             items = i;
             return this;
         },
