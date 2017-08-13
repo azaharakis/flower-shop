@@ -1,7 +1,17 @@
 # Flower-shop
 A simple flower shop
 
-# Pre-requisites
+## Using Docker
+
+`docker-compose build` Will build the image
+
+`docker-compose start` Will run the tests 
+
+`docker-compose test` Will run the tests
+
+## Running locally
+
+### Pre-requisites
 This project was built using Node 8.1.4 you can use a version manager to install it 
 such as NVM. follow the instructions here
  
@@ -13,13 +23,10 @@ To then install the correct version of node:
 
 Which will use the version specified in the .nvmrc file. 
 
-# Running the project
+### Running the project
 
 `npm run start` Will start the flower shop application
+
 `npm run test` Will lint, type check and test the application
 
-## Using Docker
 
-`docker-compose build` Will build the image
-`docker-compose start` Will run the tests 
-`docker-compose test` Will run the tests
