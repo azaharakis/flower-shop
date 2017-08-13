@@ -3,7 +3,7 @@ import buildOrder from './builder';
 
 describe('Order Builder', () => {
     let order;
-    const inventoryItem = { id: 'A1' };
+    const inventoryItem = { id: 'A1', price: 10.00 };
     const inventory = [ inventoryItem ];
 
     beforeEach(() => {
@@ -13,13 +13,14 @@ describe('Order Builder', () => {
         ];
         order = buildOrder(request)
             .from(inventory)
+            .withPricingStrategy((i,t) => i.price * t)
             .given((requestedOrderItemId) => (i) => i.id === requestedOrderItemId);
 
     });
 
     it('captures valid orders', () => {
         expect(order.build().valid).to.deep.equal([
-            [5, inventoryItem]
+            [5, inventoryItem, 50]
         ]);
     });
 
