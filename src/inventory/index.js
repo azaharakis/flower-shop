@@ -1,5 +1,6 @@
 /* @flow */
 
-export { ids } from './item';
-export type { Item, ID } from './item';
+export { pricing } from './flower';
+export type { Flower, ID } from './flower';
+
 export { default } from './factory';

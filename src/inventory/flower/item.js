@@ -7,13 +7,13 @@ export const ids = {
 
 /*eslint-disable no-undef */
 export type ID = $Keys<typeof ids>;
-export type Item = {|
+export type Flower = {|
     id: ID,
     name: string
 |};
 
-export default (id: ID, name: string): Item => ({
+export default (id: ID, name: string): Flower => ({
     id,
-    name,
+    name
 });
 

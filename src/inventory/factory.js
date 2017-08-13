@@ -1,17 +1,17 @@
 /* @flow */
-import createItem, { type Item } from './item';
+import createFlower, { type Flower } from './flower';
 
-export default () : Array<Item> => {
+export default () : Array<Flower> => {
     return [
-        createItem(
+        createFlower(
             'R12',
             'Roses'
         ),
-        createItem(
+        createFlower(
             'L09',
             'Lilies'
         ),
-        createItem(
+        createFlower(
             'T58',
             'Tulips'
         )

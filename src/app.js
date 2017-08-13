@@ -1,7 +1,7 @@
 /* @flow */
 
 import parse from './parse';
-import getInventory, { type Item } from './inventory';
+import getInventory, { type Flower } from './inventory';
 import buildOrder from './order';
 
 export default (order: string) => {
@@ -10,6 +10,6 @@ export default (order: string) => {
 
     return buildOrder(requestedOrder)
         .from(inventory)
-        .given((requestedOrderItemId) => (i: Item) => i.id === requestedOrderItemId)
+        .given((requestedOrderItemId) => (i: Flower) => i.id === requestedOrderItemId)
         .build();
 };
