@@ -17,3 +17,9 @@ Which will use the version specified in the .nvmrc file.
 
 `npm run start` Will start the flower shop application
 `npm run test` Will lint, type check and test the application
+
+## Using Docker
+
+`docker-compose build` Will build the image
+`docker-compose start` Will run the tests 
+`docker-compose test` Will run the tests

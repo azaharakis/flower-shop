@@ -1,0 +1,14 @@
+version: '3'
+services:
+  test:
+    volumes:
+      - .:/opt/flower-shop
+    build:
+      context: .
+    command: npm test
+  start:
+    volumes:
+      - .:/opt/flower-shop
+    build:
+      context: .
+    command: npm start
