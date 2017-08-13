@@ -9,11 +9,18 @@ export const ids = {
 export type ID = $Keys<typeof ids>;
 export type Flower = {|
     id: ID,
-    name: string
+    name: string,
+    bundles: Bundles
 |};
+type Size = number;
+type Price = number;
 
-export default (id: ID, name: string): Flower => ({
+export type Bundle = [Size, Price]
+export type Bundles = Array<Bundle>
+
+export default (id: ID, name: string, bundles: Bundles): Flower => ({
     id,
-    name
+    name,
+    bundles
 });
 
