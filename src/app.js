@@ -1,17 +1,23 @@
 /* @flow */
 
 import parse from './parse';
-import getInventory, { type Flower, pricing } from './inventory';
+import getInventory, { pricing } from './inventory';
 import buildOrder from './order';
 
-export default (order: string) => {
-    const requestedOrderItemMatchesInventoryItemId = (requestedOrderItemId) => (i: Flower) => i.id === requestedOrderItemId;
-    const requestedOrder = parse(order);
-    const inventory  = getInventory();
+type Item = {
+    id: string
+}
 
-    return buildOrder(requestedOrder)
+export default (order: string, inventory: Array<*> = getInventory(), pricingStrategy: Function = pricing) => {
+    const requestedOrderItemMatchesInventoryItemId = (requestedOrderItemId) => (i: Item) => i.id === requestedOrderItemId;
+    const requestedOrder = parse(order);
+
+
+    const { valid } = buildOrder(requestedOrder)
         .from(inventory)
         .given(requestedOrderItemMatchesInventoryItemId)
-        .withPricingStrategy(pricing)
+        .withPricingStrategy(pricingStrategy)
         .build();
+
+    return valid;
 };
