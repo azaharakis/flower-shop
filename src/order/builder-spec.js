@@ -9,6 +9,7 @@ describe('Order Builder', () => {
     beforeEach(() => {
         const request = [
             [5, 'A1'],
+            [-1, 'A2'],
             [20, 'IDONTEXIST']
         ];
         order = buildOrder(request)
@@ -24,9 +25,11 @@ describe('Order Builder', () => {
         ]);
     });
 
-    it('captures invalid orders', () => {
-        expect(order.build().invalid).to.deep.equal([
-            [20, 'IDONTEXIST']
-        ]);
+    it('captures invalid IDs', () => {
+        expect(order.build().invalid).to.deep.contains([20, 'IDONTEXIST']);
+    });
+
+    it('captures invalid quantities', () => {
+        expect(order.build().invalid).to.deep.contains([-1, 'A2']);
     });
 });

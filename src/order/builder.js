@@ -33,7 +33,7 @@ export default <InventoryItem, Pricing>(requestedOrder: RequestedOrder) : Object
             return requestedOrder.reduce((orders, [quantity, id]) => {
                 const foundItem = items.find(predicate(id));
 
-                if(foundItem){
+                if(foundItem && quantity > 0){
                     orders.valid.push([quantity, foundItem, pricingStrategyFn(foundItem, quantity)]);
                 }else {
                     orders.invalid.push([quantity, id]);
